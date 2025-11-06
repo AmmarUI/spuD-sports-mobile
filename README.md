@@ -25,8 +25,6 @@
 - Gunakan `pushReplacement` pada navigasi global dari Drawer agar user tidak menumpuk rute ketika berpindah antar halaman utama.  
 - Gunakan `push` saat membuka create product dari halaman utama.
 
----
-
 ## 2. Memanfaatkan hierarchy widget (`Scaffold`, `AppBar`, `Drawer`) untuk struktur halaman konsisten
 
 - **Prinsip:** buat struktur halaman dasar yang sama di setiap layar utama supaya pengalaman konsisten (AppBar + Drawer + body).  
