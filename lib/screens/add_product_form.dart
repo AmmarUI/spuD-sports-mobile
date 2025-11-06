@@ -160,7 +160,9 @@ class _ProductFormPageState extends State<ProductFormPage> {
 
                   validator: (String? value) {
                     String nonEmptyValue = "";
-                    if (value != null) {
+                    if (value == null || value.isEmpty) {
+                      return null;
+                    }else{
                       nonEmptyValue = value;
                       if (!isValidUrl(nonEmptyValue)) {
                         return "Please Enter a Valid URL";
@@ -190,7 +192,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
 
                   //formatting for number only
                   inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly
+                    FilteringTextInputFormatter.digitsOnly,
                   ],
 
                   onChanged: (String? value) {
@@ -236,7 +238,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
 
                   //formatting for number only
                   inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly
+                    FilteringTextInputFormatter.digitsOnly,
                   ],
 
                   onChanged: (String? value) {
@@ -271,8 +273,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor:
-                          WidgetStateProperty.all(Colors.red),
+                      backgroundColor: WidgetStateProperty.all(Colors.red),
                     ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
