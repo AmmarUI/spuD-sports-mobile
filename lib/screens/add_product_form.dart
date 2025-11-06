@@ -243,7 +243,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
 
                   onChanged: (String? value) {
                     setState(() {
-                      _stock = int.tryParse(value ?? '0') ?? 0;
+                      _price = int.tryParse(value ?? '0') ?? 0;
                     });
                   },
 
